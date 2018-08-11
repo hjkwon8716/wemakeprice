@@ -1,6 +1,7 @@
 package joon.wmp.util.cp.spring;
 
 import joon.wmp.util.domain.Output;
+import joon.wmp.util.domain.RegularExpression;
 import joon.wmp.util.service.OutputService;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,5 +36,19 @@ public class OutputSpringServiceTest {
         assertEquals("abcd179", output.getAlphabetNumValue());
         assertEquals("a1b7c9d", output.getCrossSortValue());
         assertEquals("a1b7c9", output.getShare());
+    }
+
+    @Test
+    public void getOutputStep1Test(){
+        //
+        String value = outputService.getOutputStep1(this.inputValue);
+        assertEquals("abcd179", value);
+    }
+
+    @Test
+    public void getOutputStep2Test(){
+        //
+        String value = outputService.getOutputStep2(this.inputValue);
+        assertEquals("a1b7c9d", value);
     }
 }

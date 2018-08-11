@@ -20,4 +20,16 @@ public class OutputResource {
         //
         return outputService.getOutput(inputValue, Integer.parseInt(conditionStr));
     }
+
+    @GetMapping(value = "step1")
+    public String getOutputStep1(@RequestParam("inputValue") String inputValue) {
+        //
+        return outputService.getOutputStep1(inputValue);
+    }
+
+    @GetMapping(value = "step2")
+    public String getOutputStep2(@RequestParam("inputValue") String inputValue) {
+        //
+        return outputService.getOutputStep2(inputValue);
+    }
 }

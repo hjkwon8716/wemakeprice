@@ -46,4 +46,28 @@ public class OutputResourceTest {
                         .andDo(MockMvcResultHandlers.print())
                         .andReturn();
     }
+
+    @Test
+    public void getOutputStep1Test() throws Exception {
+        //
+        MvcResult result =
+                this.mockMvc.perform(get("/outputs/step1")
+                        .param("inputValue","!#abcd971")
+                        .accept(MediaType.APPLICATION_JSON))
+                        .andExpect(status().isOk())
+                        .andDo(MockMvcResultHandlers.print())
+                        .andReturn();
+    }
+
+    @Test
+    public void getOutputStep2Test() throws Exception {
+        //
+        MvcResult result =
+                this.mockMvc.perform(get("/outputs/step2")
+                        .param("inputValue","!#abcd971")
+                        .accept(MediaType.APPLICATION_JSON))
+                        .andExpect(status().isOk())
+                        .andDo(MockMvcResultHandlers.print())
+                        .andReturn();
+    }
 }
