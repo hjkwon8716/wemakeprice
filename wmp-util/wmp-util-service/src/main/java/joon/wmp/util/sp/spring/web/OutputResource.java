@@ -16,7 +16,8 @@ public class OutputResource {
     private OutputService outputService;
 
     @GetMapping
-    public Output getOutput(@RequestParam("inputValue") String inputValue, @RequestParam("condition") String condition) {
-        return outputService.getOutput(inputValue, Integer.parseInt(condition));
+    public Output getOutput(@RequestParam("inputValue") String inputValue, @RequestParam(name="condition", defaultValue = "1") String conditionStr) {
+        //
+        return outputService.getOutput(inputValue, Integer.parseInt(conditionStr));
     }
 }

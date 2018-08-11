@@ -10,14 +10,6 @@ public class Output {
         this.condition = condition;
     }
 
-    public void setCrossSortValue(String crossSortValue) {
-        this.crossSortValue = crossSortValue;
-    }
-
-    public void setCondition(int condition) {
-        this.condition = condition;
-    }
-
     public String getCrossSortValue() {
         return crossSortValue;
     }
