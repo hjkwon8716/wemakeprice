@@ -11,4 +11,14 @@ public class OutputSpringService extends OutputServiceLogic{
     public Output getOutput(String inputValue, int condition) {
         return super.getOutput(inputValue, condition);
     }
+
+    @Override
+    public String getOutputStep1(String inputValue) {
+        return super.getOutputStep1(inputValue);
+    }
+
+    @Override
+    public String getOutputStep2(String inputValue) {
+        return super.getOutputStep2(inputValue);
+    }
 }
