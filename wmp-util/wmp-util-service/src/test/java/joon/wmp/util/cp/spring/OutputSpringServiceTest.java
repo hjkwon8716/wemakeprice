@@ -25,14 +25,15 @@ public class OutputSpringServiceTest {
 
     @Before
     public void setUp(){
-        this.inputValue="b!12@#!#cAb32155555";
-        this.condition = 5;
+        this.inputValue="!#abcd971";
+        this.condition = 3;
     }
 
     @Test
     public void getOutputTest(){
         Output output = outputService.getOutput(this.inputValue, this.condition);
-        assertEquals("A1b1b2c235", output.getShare());
-        assertEquals("5555", output.getBalance());
+        assertEquals("abcd179", output.getAlphabetNumValue());
+        assertEquals("a1b7c9d", output.getCrossSortValue());
+        assertEquals("a1b7c9", output.getShare());
     }
 }
