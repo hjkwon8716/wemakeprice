@@ -1,8 +1,5 @@
 package joon.wmp.util.domain;
 
-import joon.wmp.util.domain.Output;
-import joon.wmp.util.domain.RegularExpression;
-import joon.wmp.util.domain.Sort;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
@@ -20,7 +17,6 @@ public class OutputTest {
         output = new Output(sort.getCrossSort(), 5);
     }
 
-
     @Test
     public void getShareTest(){
         assertEquals("A1b1b2c235", output.getShare());
@@ -29,6 +25,15 @@ public class OutputTest {
     @Test
     public void getBalanceTest(){
         assertEquals("5555", output.getBalance());
+    }
+
+    @Test
+    public void getOutputByInputEmptyTest(){
+        RegularExpression re = new RegularExpression("");
+        Sort so = new Sort(re);
+        Output op = new Output(so.getCrossSort(), 1);
+        assertEquals("", op.getShare());
+        assertEquals("", op.getBalance());
     }
 
 }
