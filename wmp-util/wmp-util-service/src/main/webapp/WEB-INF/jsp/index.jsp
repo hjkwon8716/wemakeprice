@@ -10,7 +10,6 @@
         }
     </style>
 </head>
-<body>
     <div>
         <label for="inputValue">입력</label>
         <textarea  textarea id="inputValue" name="inputValue" cols="100" rows="10" ></textarea>
@@ -19,6 +18,16 @@
         <label for="condition">출력묶음 조건</label>
         <input type="text" id="condition" name="condition" placeholder="condition" value="1">
         <button id="btn">출력</button>
+    </div><br/>
+
+    <div>
+        <label for="alphabetNum">영어숫자 출력: </label>
+        <label id="alphabetNum"></label>
+    </div><br/>
+
+    <div>
+        <label for="crossSort">영어숫자영어숫자 출력: </label>
+        <label id="crossSort"></label>
     </div><br/>
 
     <div>
@@ -61,6 +70,8 @@
                 success: function(data) {
                     $('#share').text(data.share);
                     $('#balance').text(data.balance);
+                    $('#crossSort').text(data.crossSortValue);
+                    $('#alphabetNum').text(data.alphabetNumValue);
                 },
                 complete: function(){}
                 ,error: function(data, status, err) {}

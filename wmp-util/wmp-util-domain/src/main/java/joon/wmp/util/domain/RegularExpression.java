@@ -2,8 +2,8 @@ package joon.wmp.util.domain;
 
 public class RegularExpression {
     //
-    private static final String NUM_REG = "[^-?0-9]";
-    private static final String ALPHABET_REG = "[^-?a-zA-Z]";
+    private static final String NUM_REG = "[^0-9]";
+    private static final String ALPHABET_REG = "[^a-zA-Z]";
 
     private String inputValue;
 

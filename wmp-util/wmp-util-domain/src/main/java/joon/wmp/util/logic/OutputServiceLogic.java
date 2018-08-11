@@ -12,6 +12,9 @@ public class OutputServiceLogic implements OutputService{
         RegularExpression regularExpression = new RegularExpression(inputValue);
         Sort sort = new Sort(regularExpression);
 
-        return new Output(sort.getCrossSort(), condition);
+        Output output = new Output(sort.getCrossSort(), condition);
+        output.setAlphabetNumValue(sort.getAlphabetSort() + sort.getNumSort());
+
+        return output;
     }
 }
