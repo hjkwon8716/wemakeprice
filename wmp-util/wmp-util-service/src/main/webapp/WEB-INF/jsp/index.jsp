@@ -4,24 +4,37 @@
 <head>
     <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <title>과제</title>
+    <style type='text/css'>
+        textarea {
+            vertical-align: top;
+        }
+    </style>
 </head>
 <body>
-<div>
-    입력<textarea id="inputValue" cols="100" rows="10"></textarea>
-    <br>
-    출력묶음 조건 <input type="text" id="condition">
-    <br>
-    <button id="btn">출력</button>
-    <br>
-    몫: <label id="share"></label>
-    <br>
-    나머지: <label id="balance"></label>
-</div>
+    <div>
+        <label for="inputValue">입력</label>
+        <textarea  textarea id="inputValue" name="inputValue" cols="100" rows="10" ></textarea>
+    </div><br/>
+    <div>
+        <label for="condition">출력묶음 조건</label>
+        <input type="text" id="condition" name="condition" placeholder="condition" value="1">
+        <button id="btn">출력</button>
+    </div><br/>
+
+    <div>
+        <label for="share">몫: </label>
+        <label id="share"></label>
+    </div>
+    <div>
+        <label for="balance">나머지: </label>
+        <label id="balance"></label>
+    </div><br/>
 
 <script type="text/javascript">
     $(document).ready(function(){
         //
         $('#btn').click(function(){
+            //
             var inputValue = $('#inputValue').val();
             var condition = $('#condition').val();
 
@@ -40,6 +53,7 @@
         });
 
         function getOutputs(inputValue, condition){
+            //
             $.ajax({
                 url: '${pageContext.request.contextPath}/outputs?inputValue=' + encodeURIComponent(inputValue) + '&condition=' + condition,
                 type: 'GET',
