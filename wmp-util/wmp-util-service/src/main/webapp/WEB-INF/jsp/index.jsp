@@ -2,8 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-   <%-- <script src="../js/jquery3-1-1.js"></script>--%>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
     <title>과제</title>
 </head>
 <body>
@@ -23,8 +22,8 @@
     $(document).ready(function(){
         //
         $('#btn').click(function(){
-            var inputValue = $("#inputValue").val();
-            var condition = $("#condition").val();
+            var inputValue = $('#inputValue').val();
+            var condition = $('#condition').val();
 
             if(inputValue === ""){
                 alert("문자를 입력해주세요.")
@@ -42,17 +41,15 @@
 
         function getOutputs(inputValue, condition){
             $.ajax({
-                url: '${pageContext.request.contextPath}/outputs?inputValue=' + inputValue + '&condition=' + condition,
+                url: '${pageContext.request.contextPath}/outputs?inputValue=' + encodeURIComponent(inputValue) + '&condition=' + condition,
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    $("#share").text(data.share);
-                    $("#balance").text(data.balance);
+                    $('#share').text(data.share);
+                    $('#balance').text(data.balance);
                 },
-                complete: function(){
-                }
-                ,error: function(data, status, err) {
-                }
+                complete: function(){}
+                ,error: function(data, status, err) {}
             });
         }
     });
