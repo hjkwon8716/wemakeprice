@@ -1,7 +1,5 @@
 package joon.wmp.util.domain;
 
-import joon.wmp.util.domain.RegularExpression;
-import joon.wmp.util.domain.Sort;
 import org.junit.Before;
 import org.junit.Test;
 
