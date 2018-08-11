@@ -39,13 +39,13 @@
             var condition = $('#condition').val();
 
             if(inputValue === ""){
-                alert("문자를 입력해주세요.")
+                alert("입력 칸에 문자를 입력해주세요.")
                 return ;
             }
 
             var regNumber = /^[0-9]*$/;
             if(condition === "" || !regNumber.test(condition)) {
-                alert('숫자만 입력해주세요.');
+                alert('출력묶음 조건은 숫자만 입력해주세요.');
                 return;
             }
 
